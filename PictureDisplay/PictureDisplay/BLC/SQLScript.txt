@@ -1,0 +1,35 @@
+﻿USE [PictureDB]
+GO
+/****** Object:  Table [dbo].[Photo]    Script Date: 02/05/2017 23:04:13 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Photo](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[ImageName] [nvarchar](50) NULL,
+	[Image] [image] NULL,
+	[opinion] [bit] NULL,
+	[user] [nvarchar](50) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+
+INSERT INTO [PictureDB].[dbo].[Photo]
+           ([ImageName]
+           ,[Image]
+           ,[opinion]
+           ,[user])
+     VALUES
+           (<ImageName, nvarchar(50),>
+           ,<Image, image,>
+           ,<opinion, bit,>
+           ,<user, nvarchar(50),>)
+GO
+
+

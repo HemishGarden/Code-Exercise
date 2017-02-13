@@ -1,0 +1,69 @@
+﻿<h2 style="text-align:center"><span class="label label-default">Random Image Display</span></h2>
+
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div ng-app="DisplayPhoto" class="container-fluid" >
+	    <div ng-controller="CustDetail" class="col-md-12 " style="width:100%;text-align:center">
+            <div class="row" >
+                <div class="col-md-6">
+                    <input type="button" id="Like" value="Like" ng-click="like(images.ID,true);" class="btn btn-success"/>
+                </div>
+                <div class="col-md-6">
+                    <input type="button" id="DisLike" value="DisLike" ng-click="like(images.ID,false );" class="btn btn-success"/>
+                </div>
+            </div>
+          <br /><br /><br />
+
+        <div>
+            <div class="row">
+                <div >
+                    Image Title : <span class="label label-info">{{images.ImageName}}</span>
+                </div>
+                <div >
+                    Image ID : <span class="label label-info">{{images.ID}}</span>
+                </div>
+                <div>
+                    <img ng-src={{images.ImageURL}} width="300" accesskey class="img-thumbnail"/>
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <div>
+            <div class="col-md-4">
+                 <input type="button" id="ShowLikedImg" value="Show Liked Images" ng-click="showPic(true);" class="btn btn-primary"/>
+             </div>
+            <div class="col-md-4">
+                 No of images found is <span class="label label-info">{{AllImagees.length}}</span>
+             </div>
+
+            <div class="col-md-4">
+                 <input type="button" id="ShowDisLikedImg" value="Show DisLiked Images" ng-click="showPic(false);" class="btn btn-primary"/>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="row">
+        <div  ng-repeat="test in AllImagees" class="col-sm-4" >
+               <img ng-src="{{test.ImageURL}}" width="200" class="img-thumbnail"/>&nbsp;
+       </div>
+</div>
+</div>
+
+
+<script src="~/Script/angular.js"></script>
+<script src="~/Script/main.js"></script>
+
+</body>
+</html>
+
